@@ -17,7 +17,7 @@ function  displaytop(data){
 
 async function getdata(location){
     const city =location;
-    let d = await fetch("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
+    let d = await fetch("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
     var data = await d.json();
     const lon =data.coord.lon;
     // console.log(lon);
