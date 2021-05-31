@@ -8,7 +8,7 @@
     // opacity: .8;
     // font-family: 'Noto Sans JP', sans-serif;
     font-family: 'Noto Serif', serif;
-font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .container{
     width: 100%;
@@ -28,6 +28,7 @@ font-family: 'Roboto', sans-serif;
     margin: 0px auto;
     display: flex;
     // flex-wrap: wrap;?
+    // flex-direction: column;
     padding-top: 30px ;
     justify-content: space-between;
 
@@ -73,7 +74,7 @@ font-family: 'Roboto', sans-serif;
             font-size: 2rem;
         }
         #weat{
-            text-transform: uppercase;
+            text-transform: capitalize;
             letter-spacing: 1px;
             padding: 5px 0px;
             font-size: 1.1rem;
@@ -169,10 +170,12 @@ font-family: 'Roboto', sans-serif;
 
 // media
 
-@media screen and (max-width:1024px) {
-    *{
-        font-family: Arial, Helvetica, sans-serif;
-    }
+
+@media screen and (max-width:1024px ) {
+    // *{
+        // font-family: Arial, Helvetica, sans-serif;
+        // color: #000000;
+    // }
     #tittle{
         padding-top: 50px 0px;
         font-size:4rem;
@@ -240,6 +243,74 @@ font-family: 'Roboto', sans-serif;
     }
 }
 
-// @media screen and (max-width:480px) {
-    
-// }
+@media screen and (max-width:480px){
+    *{
+        font-family: 'Times New Roman', Times, serif;
+    }
+    #tittle{
+        font-size: 1.8rem;
+        margin: 0px;
+    }
+    #middle-tittle{
+        font-size: 1.2rem;
+        margin: 5px auto;
+    }
+    .header{
+        margin-top: 0px;
+        height: auto;
+        flex-direction: column;
+        width: 90%;
+
+        &-leftside{
+            // flex-direction: column;
+            margin-bottom: 50px;
+            img{
+                top: -10px;
+                left: -10px;
+                width: 100px;
+                height: 100px;
+            }
+            #g{
+                // padding-top: 20px ;
+                left: -10px;
+            }
+            #temp{
+                font-size: 2rem ;
+            }
+            .temp-deg{
+                font-size: 14px;
+            }
+            .temp-other{
+                font-size: 16px;
+                letter-spacing: 0px;
+            }
+        }
+
+        &-rightside{
+            text-align: center;
+            #city{
+                font-size: 2.5rem;
+                text-transform: capitalize;
+            }
+            #weat{
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .middle{
+        margin: 0px auto;
+        height: auto;
+        margin-bottom: 100px;
+
+        &-element{
+            width: 260px;
+            margin-bottom: 10px;
+        }
+    }
+    .by{
+        width: 90%;
+        margin: auto;
+        left: 5%;
+    }
+}
