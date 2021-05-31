@@ -19,7 +19,6 @@
 
 .header {
   width: 70%;
-  min-height: 180px;
   margin: 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,7 +30,7 @@
 }
 
 .header-leftside {
-  height: 150px;
+  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,7 +90,7 @@
 
 .middle {
   width: 85%;
-  margin: 0px auto;
+  margin: 20px auto;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -196,7 +195,7 @@
 
 #middle-tittle {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: 'Trade Winds', cursive;
 }
 
