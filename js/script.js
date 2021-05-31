@@ -7,7 +7,7 @@ function  displaytop(data){
     document.getElementById("time").innerText= data.weather[0].description;
     
 
-    document.getElementById("header-img").src=`http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png` ;
+    document.getElementById("header-img").src=`https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png` ;
     document.getElementById('city').innerText=data.name+" , "+data.sys.country;
     document.getElementById('temp').innerText=(data.main.temp).toFixed(0);
     document.getElementById('humidity').innerText="Humidity :"+ data.main.humidity+"%";
@@ -41,7 +41,7 @@ function addelement(newdata){
         html+=`<div class="middle-element">
         <div id="date">${timeconvert(newdata.daily[i].dt)}</div>
         
-        <div id="img"><img src="http://openweathermap.org/img/wn/${newdata.daily[i].weather[0].icon}@4x.png" alt=""></img></div>
+        <div id="img"><img src="https://openweathermap.org/img/wn/${newdata.daily[i].weather[0].icon}@4x.png" alt=""></img></div>
         
         <p><i class="material-icons">
         thermostat

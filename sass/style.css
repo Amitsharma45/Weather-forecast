@@ -32,6 +32,7 @@
 }
 
 .header-leftside {
+  height: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -156,5 +157,29 @@
 .middle-element #img img {
   width: 120px;
   height: 120px;
+}
+
+.by {
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #00417f;
+  -webkit-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
+  padding: 6px 10px;
+  border-radius: 5PX;
+}
+
+.by1 {
+  padding: 0px 10px;
+}
+
+.by i:hover {
+  color: #413737;
 }
 /*# sourceMappingURL=style.css.map */

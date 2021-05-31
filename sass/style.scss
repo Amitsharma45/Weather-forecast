@@ -30,6 +30,7 @@ font-family: 'Roboto', sans-serif;
     justify-content: space-between;
 
     &-leftside{
+        height: 150px;
         display: flex;
         color: aqua;
         margin: 0px 30px;
@@ -125,3 +126,26 @@ font-family: 'Roboto', sans-serif;
     }
 }
 // div:nth-child(not)
+
+.by {
+    // position: absolute;
+    // bottom: 1%;
+    // botto
+    margin: 0px auto;
+    display: flex;
+    width: 20%;
+
+    justify-content: center;
+    background-color: #00417f;
+    box-shadow: 4px 4px 4px  4px rgba($color: #000000,$alpha: .3);
+    padding: 6px 10px;
+    border-radius: 5PX;
+}
+
+.by1 {
+    // width: 4%;
+    padding: 0px 10px;
+}
+.by i:hover {
+    color: rgb(65, 55, 55);
+}
