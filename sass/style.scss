@@ -15,17 +15,19 @@ font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     background: linear-gradient( to top,#004e92, #000428);  
     padding-bottom: 10px; 
+    position: relative;
 }
 .header{
     // border: 2px skyblue dotted;
     // background-color: #00417f;
     // box-shadow: 4px 4px 4px  4px rgba($color: #000000, $alpha: .3);
     // border-radius: 20px;
+    
     width: 70%;
     min-height: 180px;
     margin: 0px auto;
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;?
     padding-top: 30px ;
     justify-content: space-between;
 
@@ -56,7 +58,7 @@ font-family: 'Roboto', sans-serif;
         .temp-other{
             color: #0f0f0f;
             margin: 0px 10px ;
-            font-size: 13px;
+            font-size: 14px;
             p{
                 padding-bottom: 5px ;
             }
@@ -130,9 +132,12 @@ font-family: 'Roboto', sans-serif;
 // div:nth-child(not)
 
 .by {
+    position: absolute;
+    bottom: 8px;
+    left: 35%;
     margin: 0px auto;
     display: flex;
-    width: 20%;
+    width: 30%;
 
     justify-content: center;
     background-color: #00417f;
@@ -148,3 +153,93 @@ font-family: 'Roboto', sans-serif;
 .by i:hover {
     color: rgb(65, 55, 55);
 }
+#tittle{
+    text-align: center; 
+    font-size: 3rem; 
+    padding-top: 15px ; 
+    font-family: 'Trade Winds', cursive;
+}
+#middle-tittle{
+    text-align: center; 
+    font-size: 2rem; 
+    font-family: 'Trade Winds', cursive;
+
+}
+
+
+// media
+
+@media screen and (max-width:1024px) {
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #tittle{
+        padding-top: 50px 0px;
+        font-size:4rem;
+
+    }
+    #middle-tittle{
+        font-size: 3rem;
+        margin: 20px 0px;
+
+    }
+    .header{
+        margin: 30px auto;
+        padding-top: 50px;
+        width: 80%;
+        min-height: 200px;
+        &-leftside{
+            margin: 0px;
+            .temp-other{
+                font-size: 18px;    
+                font-weight: 100;
+                p{
+                    line-height: 25px;
+                    letter-spacing: 1px;
+                }
+            }
+            .temp-deg{
+                font-size: 20px;
+                margin-left:5px;
+            }
+
+        }
+        &-rightside{
+            font-size: 20px;
+            #city{
+                font-size: 3rem;
+            }
+
+        }
+    }
+
+    .middle{
+        margin: 50px auto;
+        font-size: 20px;
+        i{
+            font-size: 35px;
+        }
+
+        justify-content: space-around;
+        &-element{
+            width: 240px;
+            height: 280px;
+            margin-bottom: 50px;
+            #date{
+                font-size: 2rem;
+            }
+            p{
+                margin-left: 10px;
+                font-size: 20px;
+
+            }
+        }
+    }
+    .by{
+        bottom: 20px;
+    }
+}
+
+// @media screen and (max-width:480px) {
+    
+// }

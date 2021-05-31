@@ -45,7 +45,7 @@ function addelement(newdata){
         
         <p><i class="material-icons">
         thermostat
-        </i><span>  &nbsp;&nbsp;${(newdata.daily[i].temp.max)} / ${(newdata.daily[i].temp.min)}&#8451;<span></p>
+        </i><span>  &nbsp;&nbsp;${(newdata.daily[i].temp.max)} / ${(newdata.daily[i].temp.min)} &#8451;<span></p>
         
         <p><i class="material-icons">
         air

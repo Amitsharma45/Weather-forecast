@@ -14,6 +14,7 @@
   background: -webkit-gradient(linear, left bottom, left top, from(#004e92), to(#000428));
   background: linear-gradient(to top, #004e92, #000428);
   padding-bottom: 10px;
+  position: relative;
 }
 
 .header {
@@ -23,8 +24,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   padding-top: 30px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -66,7 +65,7 @@
 .header-leftside .temp-other {
   color: #0f0f0f;
   margin: 0px 10px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .header-leftside .temp-other p {
@@ -162,11 +161,14 @@
 }
 
 .by {
+  position: absolute;
+  bottom: 8px;
+  left: 35%;
   margin: 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 20%;
+  width: 30%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -183,5 +185,83 @@
 
 .by i:hover {
   color: #413737;
+}
+
+#tittle {
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 15px;
+  font-family: 'Trade Winds', cursive;
+}
+
+#middle-tittle {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Trade Winds', cursive;
+}
+
+@media screen and (max-width: 1024px) {
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  #tittle {
+    padding-top: 50px 0px;
+    font-size: 4rem;
+  }
+  #middle-tittle {
+    font-size: 3rem;
+    margin: 20px 0px;
+  }
+  .header {
+    margin: 30px auto;
+    padding-top: 50px;
+    width: 80%;
+    min-height: 200px;
+  }
+  .header-leftside {
+    margin: 0px;
+  }
+  .header-leftside .temp-other {
+    font-size: 18px;
+    font-weight: 100;
+  }
+  .header-leftside .temp-other p {
+    line-height: 25px;
+    letter-spacing: 1px;
+  }
+  .header-leftside .temp-deg {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+  .header-rightside {
+    font-size: 20px;
+  }
+  .header-rightside #city {
+    font-size: 3rem;
+  }
+  .middle {
+    margin: 50px auto;
+    font-size: 20px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .middle i {
+    font-size: 35px;
+  }
+  .middle-element {
+    width: 240px;
+    height: 280px;
+    margin-bottom: 50px;
+  }
+  .middle-element #date {
+    font-size: 2rem;
+  }
+  .middle-element p {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+  .by {
+    bottom: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
