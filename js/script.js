@@ -4,7 +4,7 @@ function  displaytop(data){
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     document.getElementById("date").innerText = days[d.getDay()] +" , "+d.getDate()+ " " + months[d.getMonth()];
     // document.getElementById("time").innerText=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
-    document.getElementById("time").innerText= data.weather[0].description;
+    document.getElementById("weat").innerText= data.weather[0].description;
     
 
     document.getElementById("header-img").src=`https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png` ;

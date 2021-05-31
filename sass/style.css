@@ -83,7 +83,9 @@
   font-size: 2rem;
 }
 
-.header-rightside #time {
+.header-rightside #weat {
+  text-transform: uppercase;
+  letter-spacing: 1px;
   padding: 5px 0px;
   font-size: 1.1rem;
 }
