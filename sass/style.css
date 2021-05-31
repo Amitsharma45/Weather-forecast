@@ -19,6 +19,7 @@
 
 .header {
   width: 70%;
+  min-height: 150px;
   margin: 0px auto;
   display: -webkit-box;
   display: -ms-flexbox;
