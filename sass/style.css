@@ -271,7 +271,7 @@
   }
   #middle-tittle {
     font-size: 1.2rem;
-    margin: 5px auto;
+    margin: 20px auto;
   }
   .header {
     margin-top: 0px;
@@ -283,7 +283,7 @@
     width: 90%;
   }
   .header-leftside {
-    margin-bottom: 50px;
+    margin-bottom: 90px;
   }
   .header-leftside img {
     top: -10px;
