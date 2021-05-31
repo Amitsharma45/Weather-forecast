@@ -283,7 +283,7 @@
     width: 90%;
   }
   .header-leftside {
-    margin-bottom: 90px;
+    margin-bottom: 80px;
   }
   .header-leftside img {
     top: -10px;
@@ -305,6 +305,7 @@
     letter-spacing: 0px;
   }
   .header-rightside {
+    margin-top: 20px;
     text-align: center;
   }
   .header-rightside #city {
