@@ -1,16 +1,20 @@
 async function getdata_name(location) {
     const city = location;
     let d = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
-    var data = await d.json();
-
-    const lon = data.coord.lon;
-    const lat = data.coord.lat;
-
-    let main = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d")
-    let newdata = await main.json();
-
-    displaytop(data);
-    addelement(newdata);
+    
+    if(d.status==200){
+        var data = await d.json();
+        const lon = data.coord.lon;
+        const lat = data.coord.lat;
+        let main = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d")
+        let newdata = await main.json();
+        displaytop(data);
+        addelement(newdata);
+    }else{
+        document.getElementsByClassName('load')[0].style.display='none';
+        alert("Please check spaling")
+        console.log("error");
+    }
 }
 
 async function displaydate_lat_lon(lat, lon) {
@@ -29,14 +33,14 @@ async function displaydate_lat_lon(lat, lon) {
 }
 
 function displaytop(data) {
-    let v=document.getElementsByClassName('header')[0].style.visibility= "visible";
+    
     var d = new Date();
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     document.getElementById("date").innerText = days[d.getDay()] + " , " + d.getDate() + " " + months[d.getMonth()];
     // document.getElementById("time").innerText=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
     document.getElementById("weat").innerText = data.weather[0].description;
-    document.getElementsByClassName('load')[0].style.display='none';
+    
     
 
     document.getElementById("headerimg").innerHTML= `<img id="header-img" src="">`;
@@ -50,6 +54,9 @@ function displaytop(data) {
     // console.log(v);
 
     document.getElementById('middle-tittle').style.display='block';
+    document.getElementsByClassName('load')[0].style.display='none';
+    document.getElementsByClassName('header')[0].style.visibility= "visible";
+    document.getElementsByClassName('middle')[0].style.visibility= "visible";
 
 
     
@@ -103,7 +110,7 @@ function getlocation() {
 
     } else {
         console.log("Geolocation is not supported by this browser.");
-        getdata_name("Aligarh");
+        getdata_name("Delhi");
     }
 
     function showPosition(position) {
@@ -113,3 +120,16 @@ function getlocation() {
     }
 }
 getlocation();
+
+function city(){
+    let  i = document.getElementById('input');
+    // console.log(i);
+    document.getElementsByClassName('header')[0].style.visibility= "hidden";
+    document.getElementsByClassName('middle')[0].style.visibility= "hidden";
+    document.getElementById('middle-tittle').style.display='none';
+    document.getElementsByClassName('load')[0].style.display='block';
+    
+    getdata_name(i.value);
+    i.placeholder="Search City";
+    i.value="";
+}
