@@ -243,7 +243,7 @@
     }
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:780px){
     *{
         font-family: 'Times New Roman', Times, serif;
     }
@@ -263,6 +263,7 @@
 
         // border: 2px solid black ;
         &-leftside{
+            // justify-content: center;
             width: 100%;
             height: auto;
             // flex-direction: column;

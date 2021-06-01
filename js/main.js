@@ -1,3 +1,33 @@
+async function getdata_name(location){
+    const city = location;
+    let d = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
+    var data = await d.json();
+
+    const lon = data.coord.lon;
+    const lat = data.coord.lat;
+
+    let main = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d")
+    let newdata = await main.json();
+
+    displaytop(data);
+    addelement(newdata);
+}
+
+async function displaydate_lat_lon(lat,lon){
+    const lonn = lon;
+    const latn = lat;
+    let d =await fetch("https://api.openweathermap.org/data/2.5/weather?lat="+latn+ "&lon="+lonn+"&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
+    // let d = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
+    var data = await d.json();
+
+
+    let main = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d")
+    let newdata = await main.json();
+
+    displaytop(data);
+    addelement(newdata);
+}
+
 function displaytop(data) {
     var d = new Date();
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -14,24 +44,6 @@ function displaytop(data) {
     document.getElementById('wind').innerText = "wind : " + (data.wind.speed * 3.6).toFixed(2) + " Km/h";
     document.getElementById('Pressure').innerText = "Pressure : " + data.main.pressure + " hPa";
 }
-
-async function getdata(location) {
-    const city = location;
-    let d = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
-    var data = await d.json();
-    const lon = data.coord.lon;
-    // console.log(lon);
-    const lat = data.coord.lat;
-    // console.log(lat);
-    let main = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d")
-    let newdata = await main.json();
-    displaytop(data);
-    // console.log(newdata);
-    addelement(newdata);
-}
-getdata("Aligarh");
-
-
 
 function addelement(newdata) {
     // let t=timeconvert(newdata.daily[1].dt);
@@ -65,23 +77,6 @@ function addelement(newdata) {
 
 }
 
-function getlocation(){
-    // function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    // }
-
-    function showPosition(position) {
-        console.log(position.coords.latitude); 
-        console.log(position.coords.longitude);
-    }
-}
-getlocation();
-// addelement();
-
 function timeconvert(time) {
 
     let unix_timestamp = time
@@ -89,68 +84,21 @@ function timeconvert(time) {
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     return date.getDate() + ' , ' + months[date.getMonth()];
-    
+
 }
+function getlocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+        
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+        getdata_name("delhi");
+    }
 
-
-
-// function time(){
-
-    //     setTimeout(() => {
-    //         var d = new Date();
-    //         document.getElementById("time").innerText=d.getHours()+":"+d.getMinutes()+":"+(d.getSeconds());
-    //         // console.log(d.getSeconds());
-    //         // console.log("jhi");9
-    //         time();
-    //     }, 1000);
-    // }
-    // time();
-
-// timeconvert(1622356200);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    function showPosition(position) {
+        console.log(position.coords.latitude);
+        console.log(position.coords.longitude);
+        displaydate_lat_lon(position.coords.latitude,position.coords.longitude);
+    }
+}
+getlocation();
