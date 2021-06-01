@@ -1,4 +1,4 @@
-async function getdata_name(location){
+async function getdata_name(location) {
     const city = location;
     let d = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
     var data = await d.json();
@@ -13,10 +13,10 @@ async function getdata_name(location){
     addelement(newdata);
 }
 
-async function displaydate_lat_lon(lat,lon){
+async function displaydate_lat_lon(lat, lon) {
     const lonn = lon;
     const latn = lat;
-    let d =await fetch("https://api.openweathermap.org/data/2.5/weather?lat="+latn+ "&lon="+lonn+"&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
+    let d = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + latn + "&lon=" + lonn + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
     // let d = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=608fc6e2323f6ea6e8970619c1026e8d");
     var data = await d.json();
 
@@ -29,20 +29,30 @@ async function displaydate_lat_lon(lat,lon){
 }
 
 function displaytop(data) {
+    let v=document.getElementsByClassName('header')[0].style.visibility= "visible";
     var d = new Date();
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     document.getElementById("date").innerText = days[d.getDay()] + " , " + d.getDate() + " " + months[d.getMonth()];
     // document.getElementById("time").innerText=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
     document.getElementById("weat").innerText = data.weather[0].description;
+    document.getElementsByClassName('load')[0].style.display='none';
+    
 
-
+    document.getElementById("headerimg").innerHTML= `<img id="header-img" src="">`;
     document.getElementById("header-img").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`;
     document.getElementById('city').innerText = data.name + " , " + data.sys.country;
     document.getElementById('temp').innerText = (data.main.temp).toFixed(0);
     document.getElementById('humidity').innerText = "Humidity :" + data.main.humidity + "%";
     document.getElementById('wind').innerText = "wind : " + (data.wind.speed * 3.6).toFixed(2) + " Km/h";
     document.getElementById('Pressure').innerText = "Pressure : " + data.main.pressure + " hPa";
+    
+    // console.log(v);
+
+    document.getElementById('middle-tittle').style.display='block';
+
+
+    
 }
 
 function addelement(newdata) {
@@ -68,6 +78,7 @@ function addelement(newdata) {
         </i><span> &nbsp; &nbsp;${newdata.daily[i].humidity}%<span></p>
         </div>
         
+        
         `;
     }
     middle.innerHTML = html;
@@ -89,7 +100,7 @@ function timeconvert(time) {
 function getlocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
-        
+
     } else {
         console.log("Geolocation is not supported by this browser.");
         getdata_name("Aligarh");
@@ -98,7 +109,7 @@ function getlocation() {
     function showPosition(position) {
         console.log(position.coords.latitude);
         console.log(position.coords.longitude);
-        displaydate_lat_lon(position.coords.latitude,position.coords.longitude);
+        displaydate_lat_lon(position.coords.latitude, position.coords.longitude);
     }
 }
 getlocation();
