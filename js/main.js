@@ -92,7 +92,7 @@ function getlocation() {
         
     } else {
         console.log("Geolocation is not supported by this browser.");
-        getdata_name("delhi");
+        getdata_name("Aligarh");
     }
 
     function showPosition(position) {
