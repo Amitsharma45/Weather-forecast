@@ -261,18 +261,21 @@
         flex-direction: column;
         width: 90%;
 
+        // border: 2px solid black ;
         &-leftside{
+            width: 100%;
+            height: auto;
             // flex-direction: column;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
             img{
-                top: -10px;
-                left: -10px;
-                width: 100px;
-                height: 100px;
+                top: -30px;
+                left: -30px;
+                width: 150px;
+                height: 150px;
             }
             #g{
-                // padding-top: 20px ;
-                left: -10px;
+                padding-left: 5px ;
+                left: -80px;
             }
             #temp{
                 font-size: 2rem ;
@@ -281,16 +284,24 @@
                 font-size: 14px;
             }
             .temp-other{
+                margin: 0px;
+                padding-left: 10px;
+                width: 100%;
                 font-size: 16px;
                 letter-spacing: 0px;
+            }
+
+            #wind{
+                width: 150px;
             }
         }
 
         &-rightside{
-            margin-top: 20px;
+            // margin-top: 20px;
             text-align: center;
             #city{
-                font-size: 2.5rem;
+                font-size: 3rem;
+                // word-spacing: 5px;
                 text-transform: capitalize;
             }
             #weat{
@@ -305,7 +316,7 @@
         margin-bottom: 100px;
 
         &-element{
-            width: 260px;
+            width: 240px;
             margin-bottom: 10px;
         }
     }
