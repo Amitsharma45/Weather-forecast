@@ -289,13 +289,13 @@
   }
   .header-leftside img {
     top: -30px;
-    left: -30px;
+    left: -15px;
     width: 150px;
     height: 150px;
   }
   .header-leftside #g {
     padding-left: 5px;
-    left: -80px;
+    left: -65px;
   }
   .header-leftside #temp {
     font-size: 2rem;
