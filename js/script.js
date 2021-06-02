@@ -94,21 +94,6 @@ function timeconvert(time) {
 
 
 
-// function time(){
-
-    //     setTimeout(() => {
-    //         var d = new Date();
-    //         document.getElementById("time").innerText=d.getHours()+":"+d.getMinutes()+":"+(d.getSeconds());
-    //         // console.log(d.getSeconds());
-    //         // console.log("jhi");9
-    //         time();
-    //     }, 1000);
-    // }
-    // time();
-
-// timeconvert(1622356200);
-
-
 
 
 

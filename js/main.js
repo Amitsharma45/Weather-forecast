@@ -106,13 +106,14 @@ function timeconvert(time) {
 }
 function getlocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition,error);
+        
+    } 
 
-    } else {
-        console.log("Geolocation is not supported by this browser.");
+    function error(){
         getdata_name("Delhi");
-    }
 
+    }
     function showPosition(position) {
         console.log(position.coords.latitude);
         console.log(position.coords.longitude);
