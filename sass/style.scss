@@ -2,13 +2,19 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-    // color: #0f0f0f;
-    // color: white;
     color: white;
-    // opacity: .8;
-    // font-family: 'Noto Sans JP', sans-serif;
     font-family: "Noto Serif", serif;
     font-family: "Roboto", sans-serif;
+    ::-webkit-scrollbar{
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track{
+        background-color: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb{
+        // border-radius: 50px;
+        background-color: gray;
+    }
 }
 .load {
     // <style type="text/css">
@@ -106,7 +112,7 @@
     justify-content: space-between;
 
     &-leftside {
-        overflow: hidden;
+        // overflow-y: hidden;
         height: 80px;
         display: flex;
         color: aqua;
@@ -459,9 +465,9 @@
     }
     button:hover{
         cursor: pointer;
-        margin: 2px 0px;
+        // margin: 2px 0px;
         border-radius: 0px 10px 10px 0px;
-        height: 26px;
+        height: 33px;
         
         
     }

@@ -12,7 +12,7 @@ async function getdata_name(location) {
         addelement(newdata);
     }else{
         document.getElementsByClassName('load')[0].style.display='none';
-        alert("Please check spaling")
+        alert("Please Enter Correct City Name or Check Spelling")
         console.log("error");
     }
 }
