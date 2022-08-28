@@ -1,0 +1,13 @@
+#about-container {
+    min-height: 80vh;
+    margin-top: 3rem;
+}
+
+#para {
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+#para a {
+    text-decoration: none;
+}

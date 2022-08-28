@@ -1,0 +1,17 @@
+#contact-container {
+    min-height: 85vh;
+    margin-top: 2rem;
+}
+
+.contact-card-title {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.contact-card-text {
+    font-size: 14px;
+}
+
+.linkedIn {
+    width: 30px;
+}

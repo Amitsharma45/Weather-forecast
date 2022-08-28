@@ -1,0 +1,15 @@
+.card_component {
+    width: 100%;
+    min-height: 500px;
+    background-color: #88BCBD;
+    color: #254e58;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1{
+    font-family: 'Lobster', 'cursive';
+}
+#nexttemp_icon{
+    width: 28px;
+    height: 28px;
+}
